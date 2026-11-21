@@ -35,7 +35,8 @@ jobs:
           pip install pytest
           pip install pytest-cov
           pytest ./tests --cov-config=.coveragerc --cov-report=xml --cov=./src/zvt --ignore=tests/recorders/ --ignore=tests/domain/
-      - name: Codecov
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
         with:
+          files: ./coverage.xml
           verbose: true
